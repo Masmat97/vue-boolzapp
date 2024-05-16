@@ -5,7 +5,6 @@
 }
 
 body {
-    color: white;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -14,31 +13,89 @@ body {
 }
 
 .greenBlue {
-    height: 10vh;
+    height: 15vh;
     background-color: rgb(0, 150, 136);
 }
 
 .grey {
     background-color: rgb(217, 219, 212);
-    height: 90vh;
+    height: 85vh;
 }
 
 .container {
-    height: 90vh;
+    display: flex;
+    height: 95vh;
     padding-top: 5vh;
-    padding-bottom: 5vh;
     margin-left: 10rem;
-    margin-right: 10rem;
-    background-color: red;
-    position: relative;
+    margin-right: 15rem;
 }
 
-.columnLeft{
-    width: 40%;
-    background-color: yellow;
+.columnLeft {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding-left: 1rem;
 }
 
-.columnRight{
-    width: 60%;
-    background-color: blue;
+.columnRight {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding-left: 1rem;
+    width: 65%;
+    background-image: url(../img/mine.jpg);
+}
+
+.avatar {
+    width: 3rem;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.myself {
+    padding-right: 14rem;
+}
+
+.firstRow {
+    background-color: rgb(234, 234, 234);
+}
+
+.fa-ellipsis-vertical {
+    padding:0, 1rem;
+}
+
+.firstRow {
+    padding-top: 1rem;
+}
+
+.secondRow {
+    background-color: rgb(142, 218, 252);
+}
+
+.fa-bell-slash {
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.notifiche {
+    padding-left: 3rem;
+    color: grey;
+}
+
+.msg {
+    color: gray;
+    padding-left: 3rem;
+}
+
+.time {
+    align-self: flex-end;
+}
+
+.utenti {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    list-style: none;
+
 }

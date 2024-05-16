@@ -21,11 +21,44 @@
 </head>
 
 <body>
-    <div id="">
+    <div id="app">
         <div class="greenBlue">
             <div class="container">
 
-                <div class="columnLeft"></div>
+                <div class="columnLeft">
+                    <div class="firstRow">
+                        <img class="avatar" src="./img/avatar_io.jpg" alt="">
+                        <span class="myself">Matteo</span>
+                        <i class="fa-solid fa-spinner"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                    <div class="secondRow">
+                        <i class="fa-solid fa-bell-slash"></i>
+                        <span>Ricevi notifiche di nuovi messaggi</span><br>
+                        <a class="notifiche" href="">Attiva notifiche sul desktop</a>
+                    </div>
+                    <div class="thirdRow">
+                        <input type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+
+                    <li class="utenti" v-for="contact, i in contacts">
+                        <img class="avatar" :src="contact.avatar" alt="Avatar">
+                        <span class="nome">{{ contact.name }}</span>
+                        <span class="time">12:00</span><br>
+                        <span class="msg">Ultimo messaggio inviato</span>
+                        <hr>
+                    </li>
+
+
+
+
+
+
+
+
+
+                </div>
                 <div class="columnRight"></div>
 
 
