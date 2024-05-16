@@ -41,7 +41,6 @@ body {
     display: flex;
     flex-direction: column;
     overflow: auto;
-    padding-left: 1rem;
     width: 65%;
     background-image: url(../img/mine.jpg);
 }
@@ -60,8 +59,10 @@ body {
     background-color: rgb(234, 234, 234);
 }
 
+.fa-message,
+.fa-paperclip,
 .fa-ellipsis-vertical {
-    padding:0, 1rem;
+   padding-left: 1rem;
 }
 
 .firstRow {
@@ -84,18 +85,25 @@ body {
 }
 
 .msg {
-    color: gray;
+    color: rgb(194, 191, 191);
     padding-left: 3rem;
+    font-size:13px;
 }
 
 .time {
-    align-self: flex-end;
+   float: right;
+   color: rgb(194, 191, 191);
 }
 
 .utenti {
-    display: flex;
-    flex-direction: column;
     background-color: white;
     list-style: none;
 
+}
+
+.fa-magnifying-glass{
+    padding-left: 25rem;
+}
+.input{
+    width: 90%;
 }

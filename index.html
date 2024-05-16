@@ -34,12 +34,15 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                     <div class="secondRow">
-                        <i class="fa-solid fa-bell-slash"></i>
+                        <i class="fa-solid fa-bell-slash" style="color:rgb(142, 218, 252);"></i>
                         <span>Ricevi notifiche di nuovi messaggi</span><br>
                         <a class="notifiche" href="">Attiva notifiche sul desktop</a>
                     </div>
                     <div class="thirdRow">
-                        <input type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+                        <button>
+                            <i class="fas fa-check"></i> Conferma
+                          </button>
+                        <input class="input" type="text" name="search" placeholder="Cerca o inizia una nuova chat">
                     </div>
 
                     <li class="utenti" v-for="contact, i in contacts">
@@ -49,17 +52,17 @@
                         <span class="msg">Ultimo messaggio inviato</span>
                         <hr>
                     </li>
-
-
-
-
-
-
-
-
-
                 </div>
-                <div class="columnRight"></div>
+                <div class="columnRight">
+                    <div class="firstRow">
+                        <img class="avatar" src="./img/avatar_io.jpg" alt="">
+                        <span class="myself">Matteo</span>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i><br>
+                        <span class="msg">Ultimo accesso oggi alle 12:00</span>
+                    </div>
+                </div>
 
 
 
