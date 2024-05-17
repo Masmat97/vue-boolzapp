@@ -48,7 +48,7 @@
                     </div>
 
 
-                    <li @click="selezionaContatto(i)" class="utenti" v-for="contact, i in contacts">
+                    <li @click="setActiveContact(i)" class="utenti" v-for="contact, i in contacts">
                         <img class="avatar" :src="contact.avatar" alt="Avatar">
                         <span class="nome">{{ contact.name }}</span>
                         <span class="time">12:00</span><br>
@@ -56,20 +56,20 @@
                         <hr>
                     </li>
                 </div>
-                <div class="columnRight">
-                    <div class="firstRow">
+                <div class="columnRight" v-for="contact, i in activeContact.messages">
+                    <div class="firstRow" >
                         <div>{{ getConversazione() }}</div>
-                        <div v-for="element, i in contacts[0].messages">
+                        <div >
                             {{ element.message}}
-                        </div> 
+                        </div>
                         <img class="avatar" src="./img/avatar_io.jpg" alt="">
-                        <span class="livechat">Michele</span>
+                        <span class="livechat">{{ activeContact.name }}</span>
                         <i class="fa-solid fa-magnifying-glass" id="glass"></i>
                         <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i><br>
                         <span class="msg">Ultimo accesso oggi alle 12:00</span>
                     </div>
-                    <li class="chat-column" >
+                    <li class="chat-column">
                         <template v-for="element, i in contacts[0].messages">
                             <div class="badge bg-success text-white" v-if="element.status == 'sent'">
                                 {{ element.message }}
@@ -86,8 +86,8 @@
                     <div class="message-bar">
                         <i class="fa-regular fa-face-smile"></i>
                         <input type="text" class="form-control nuovo-msg" placeholder="Cerca o inizia una nuova chat"
-                        aria-label="Username" aria-describedby="basic-addon1">
-                            <i class="fa-solid fa-microphone"></i>
+                            aria-label="Username" aria-describedby="basic-addon1">
+                        <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
 

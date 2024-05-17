@@ -177,12 +177,15 @@ selezionaContatto(indice) {
 console.log("hai cliccato", indice)
 
 },
-
          getConversazione(){
-            return  "ok"
+            
          },
-       
-        
+         activeContact() {
+            return this.contacts[this.activeContact];
+          },
+          setActiveContact(i) {
+            this.activeContactI = i;
+          },
     },
    
 }).mount("#app");
