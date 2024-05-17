@@ -40,7 +40,7 @@ body {
 .columnRight {
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    overflow-y: scroll;
     width: 65%;
     background-image: url(../img/mine.jpg);
 }
@@ -51,8 +51,12 @@ body {
     border-radius: 50%;
 }
 
-.myself {
+.my {
     padding-right: 14rem;
+}
+
+.liveachat {
+    margin-right: 40rem;
 }
 
 .firstRow {
@@ -62,7 +66,7 @@ body {
 .fa-message,
 .fa-paperclip,
 .fa-ellipsis-vertical {
-   padding-left: 1rem;
+    padding-left: 1rem;
 }
 
 .firstRow {
@@ -84,15 +88,20 @@ body {
     color: grey;
 }
 
+.input-group {
+    background-color: white;
+    width: 100%;
+}
+
 .msg {
     color: rgb(194, 191, 191);
     padding-left: 3rem;
-    font-size:13px;
+    font-size: 13px;
 }
 
 .time {
-   float: right;
-   color: rgb(194, 191, 191);
+    float: right;
+    color: rgb(194, 191, 191);
 }
 
 .utenti {
@@ -101,9 +110,61 @@ body {
 
 }
 
-.fa-magnifying-glass{
-    padding-left: 25rem;
+.nuova-chat {
+    width: 100%;
 }
-.input{
+
+
+
+.inviati {
+    float: right;
+    border-radius: 10%;
+    background-color: red;
+    padding: 1rem;
+    line-height: 3rem;
+}
+
+.ricevuti {
+    margin-left: 2rem;
+}
+
+.chat-column {
+    list-style: none;
+    line-height: 5rem;
+}
+
+.bg-success {
+    float: right;
+    margin-right: 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.bg-light {
+    margin-left: 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.ora {
+    font-size: 8px;
+    color:rgb(233, 229, 229);
+}
+
+.message-bar{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(234, 234, 234);
+    float: inline-end;
+    padding:1rem;
+}
+
+.nuovo-msg{
     width: 90%;
+    margin: auto;
+}
+
+.fa-face-smile,
+.fa-microphone{
+    margin:auto;
 }

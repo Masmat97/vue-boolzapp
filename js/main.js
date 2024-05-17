@@ -172,10 +172,17 @@ createApp({
         
     },
     methods: {
-         
+
+selezionaContatto(indice) {
+console.log("hai cliccato", indice)
+
+},
+
+         getConversazione(){
+            return  "ok"
+         },
        
         
-
     },
    
 }).mount("#app");

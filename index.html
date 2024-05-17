@@ -28,7 +28,7 @@
                 <div class="columnLeft">
                     <div class="firstRow">
                         <img class="avatar" src="./img/avatar_io.jpg" alt="">
-                        <span class="myself">Matteo</span>
+                        <span class="my">Matteo</span>
                         <i class="fa-solid fa-spinner"></i>
                         <i class="fa-solid fa-message"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -38,14 +38,17 @@
                         <span>Ricevi notifiche di nuovi messaggi</span><br>
                         <a class="notifiche" href="">Attiva notifiche sul desktop</a>
                     </div>
-                    <div class="thirdRow">
-                        <button>
-                            <i class="fas fa-check"></i> Conferma
-                          </button>
-                        <input class="input" type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+
+
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"><i
+                                class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control nuova-chat" placeholder="Cerca o inizia una nuova chat"
+                            aria-label="Username" aria-describedby="basic-addon1">
                     </div>
 
-                    <li class="utenti" v-for="contact, i in contacts">
+
+                    <li @click="selezionaContatto(i)" class="utenti" v-for="contact, i in contacts">
                         <img class="avatar" :src="contact.avatar" alt="Avatar">
                         <span class="nome">{{ contact.name }}</span>
                         <span class="time">12:00</span><br>
@@ -55,12 +58,36 @@
                 </div>
                 <div class="columnRight">
                     <div class="firstRow">
+                        <div>{{ getConversazione() }}</div>
+                        <div v-for="element, i in contacts[0].messages">
+                            {{ element.message}}
+                        </div> 
                         <img class="avatar" src="./img/avatar_io.jpg" alt="">
-                        <span class="myself">Matteo</span>
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span class="livechat">Michele</span>
+                        <i class="fa-solid fa-magnifying-glass" id="glass"></i>
                         <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i><br>
                         <span class="msg">Ultimo accesso oggi alle 12:00</span>
+                    </div>
+                    <li class="chat-column" >
+                        <template v-for="element, i in contacts[0].messages">
+                            <div class="badge bg-success text-white" v-if="element.status == 'sent'">
+                                {{ element.message }}
+                                <small class="ora">{{ element.date }}</small>
+                            </div><br>
+                            <div class="badge bg-light text-dark" v-if="element.status == 'received'">
+                                {{ element.message }}
+                                <small class="ora">{{ element.date }}</small>
+                            </div><br>
+
+                        </template>
+                    </li>
+
+                    <div class="message-bar">
+                        <i class="fa-regular fa-face-smile"></i>
+                        <input type="text" class="form-control nuovo-msg" placeholder="Cerca o inizia una nuova chat"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                            <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
 
