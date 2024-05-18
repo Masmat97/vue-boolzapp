@@ -1,8 +1,8 @@
-const {createApp} = Vue;
+const { createApp } = Vue;
 
 createApp({
     data() {
-        return{
+        return {
             contacts: [
                 {
                     name: 'Michele',
@@ -166,28 +166,49 @@ createApp({
                     ],
                 }
             ],
-            
+            sendnewMessage: "",
 
+
+            selectedIndex: null
         }
-        
+
+    },
+
+
+    computed: {
+        selectedContact() {
+            return this.contacts[this.selectedIndex];
+        }
     },
     methods: {
+        selectContact(index) {
+            console.log('Contact clicked:', index);
+            this.selectedIndex = index;
+        },
+        sendMessage() {
+            if (this.newMessage.trim() !== '' && this.selectedContact) {
+              // Aggiungi il nuovo messaggio alla lista dei messaggi del contatto selezionato
+              this.selectedContact.messages.push({
+                date: new Date().toLocaleString(),
+                message: this.newMessage,
+                status: 'sent'
+              });
+      
+              // Resetta il campo di input
+              this.newMessage = '';
+      
+              // Risposta automatica dell'interlocutore dopo 2 secondi
+              setTimeout(() => {
+                this.selectedContact.messages.push({
+                  date: new Date().toLocaleString(),
+                  message: 'Ok',
+                  status: 'received'
+                });
+              }, 2000);
+            }
+          }
+    }
 
-selezionaContatto(indice) {
-console.log("hai cliccato", indice)
-
-},
-         getConversazione(){
-            
-         },
-         activeContact() {
-            return this.contacts[this.activeContact];
-          },
-          setActiveContact(i) {
-            this.activeContactI = i;
-          },
-    },
-   
 }).mount("#app");
 
 
