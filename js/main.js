@@ -166,19 +166,22 @@ createApp({
                     ],
                 }
             ],
-            sendnewMessage: "",
+            selectedIndex: null,
+            newMessage: '',
+            searchQuery: '',
 
-
-            selectedIndex: null
         }
 
     },
-
-
     computed: {
+        // Seleziona contatto
         selectedContact() {
             return this.contacts[this.selectedIndex];
-        }
+        },
+        // Filtra contatti
+        filteredContacts() {
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+        },
     },
     methods: {
         selectContact(index) {
@@ -187,26 +190,26 @@ createApp({
         },
         sendMessage() {
             if (this.newMessage.trim() !== '' && this.selectedContact) {
-              // Aggiungi il nuovo messaggio alla lista dei messaggi del contatto selezionato
-              this.selectedContact.messages.push({
-                date: new Date().toLocaleString(),
-                message: this.newMessage,
-                status: 'sent'
-              });
-      
-              // Resetta il campo di input
-              this.newMessage = '';
-      
-              // Risposta automatica dell'interlocutore dopo 2 secondi
-              setTimeout(() => {
+                // Aggiungi il nuovo messaggio alla lista dei messaggi del contatto selezionato
                 this.selectedContact.messages.push({
-                  date: new Date().toLocaleString(),
-                  message: 'Ok',
-                  status: 'received'
+                    date: new Date().toLocaleString(),
+                    message: this.newMessage,
+                    status: 'sent'
                 });
-              }, 2000);
+
+                // Resetta il campo di input
+                this.newMessage = '';
+
+                // Risposta automatica dell'interlocutore dopo 2 secondi
+                setTimeout(() => {
+                    this.selectedContact.messages.push({
+                        date: new Date().toLocaleString(),
+                        message: 'Ok',
+                        status: 'received'
+                    });
+                }, 1000);
             }
-          }
+        }
     }
 
 }).mount("#app");

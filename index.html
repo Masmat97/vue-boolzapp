@@ -42,10 +42,10 @@
                         <span class="input-group-text" id="basic-addon1"><i
                                 class="fa-solid fa-magnifying-glass"></i></span>
                         <input type="text" class="form-control nuova-chat" placeholder="Cerca o inizia una nuova chat"
-                            aria-label="Username" aria-describedby="basic-addon1">
+                            v-model="searchQuery" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
-                    <li class="utenti" v-for="(contact, index) in contacts" :key="index" @click="selectContact(index)"
-                        :class="{ active: index === selectedIndex }">
+                    <li class="utenti" v-for="(contact, index) in filteredContacts" :key="index"
+                        @click="selectContact(index)" :class="{ active: index === selectedIndex }">
                         <img class="avatar" :src="contact.avatar" alt="">
                         <span class="nome">{{ contact.name }}</span>
                         <span class="time">12:00</span><br>
@@ -60,10 +60,10 @@
                         <i class="fa-solid fa-magnifying-glass" id="glass"></i>
                         <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i><br>
-                        <span class="msg">Ultimo accesso oggi alle 12:00</span>
+                        <span class="msg">Ultimo accesso {{ date }}</span>
                     </div>
                     <li class="chat-column" v-if="selectedContact">
-                        <div class="messsage"v-for="(message, index) in selectedContact.messages" :key="index">
+                        <div class="messsage" v-for="(message, index) in selectedContact.messages" :key="index">
                             <div class="badge bg-success text-white" v-if="message.status == 'sent'">
                                 {{ message.message }}
                                 <small class="ora">{{ message.date }}</small>
@@ -71,30 +71,20 @@
                             <div class="badge bg-light text-dark" v-if="message.status == 'received'">
                                 {{ message.message }}
                                 <small class="ora">{{ message.date }}</small>
-                                <div class="badge bg-success- text-dark" v-if="message.status == 'sent'" >
-                                    {{ newMessage }}
-                                    <small class="ora">{{  }}</small>
-                            </div><br>
-                        </div>
+                            </div>
                     </li>
                     <div class="message-bar">
                         <i class="fa-regular fa-face-smile"></i>
                         <input type="text" class="form-control nuovo-msg" placeholder="Cerca o inizia una nuova chat"
-                        v-model="newMessage" @keyup.enter="sendMessage" aria-label="Username" aria-describedby="basic-addon1">
+                            v-model="newMessage" @keyup.enter="sendMessage" aria-label="Username"
+                            aria-describedby="basic-addon1">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
             </div>
         </div>
         <div class="grey">
-
         </div>
-
-
-
-
-
-
     </div>
     <script src="./js/main.js"></script>
 </body>

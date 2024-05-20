@@ -153,8 +153,10 @@ body {
     display: flex;
     flex-direction: row;
     background-color: rgb(234, 234, 234);
-    float: inline-end;
+    position: fixed;
+    bottom: 2rem;
     padding:1rem;
+    width:54% ;
 }
 
 .nuovo-msg{
