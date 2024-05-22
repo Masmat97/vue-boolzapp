@@ -49,7 +49,7 @@
                         <img class="avatar" :src="contact.avatar" alt="">
                         <span class="nome">{{ contact.name }}</span>
                         <span class="time">12:00</span><br>
-                        <span class="msg">Ultimo messaggio inviato</span>
+                        <span class="msg" >Ultimo messaggio inviato</span>
                         <hr>
                     </li>
                 </div>
@@ -60,7 +60,7 @@
                         <i class="fa-solid fa-magnifying-glass" id="glass"></i>
                         <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i><br>
-                        <span class="msg">Ultimo accesso {{ date }}</span>
+                        <span class="msg">Ultimo accesso</span>
                     </div>
                     <li class="chat-column" v-if="selectedContact">
                         <div class="messsage" v-for="(message, index) in selectedContact.messages" :key="index">

@@ -128,7 +128,7 @@ body {
 
 .chat-column {
     list-style: none;
-    line-height: 5rem;
+    line-height: 4rem;
 }
 
 .bg-success {
@@ -168,3 +168,33 @@ body {
 .fa-microphone{
     margin:auto;
 }
+
+
+
+
+
+
+
+
+
+.dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  
+  .dropdown button {
+    padding: 10px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .dropdown button:hover {
+    background-color: #f5f5f5;
+  }
