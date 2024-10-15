@@ -182,11 +182,26 @@ createApp({
         filteredContacts() {
             return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
         },
+        // Ottieni l'ultimo messaggio di ciascun contatto
+        lastMessage() {
+            return (contact) => {
+                const lastMessage = contact.messages[contact.messages.length - 1];
+                return lastMessage ? lastMessage.date : '';
+            }
+        }
     },
     methods: {
         selectContact(index) {
             console.log('Contact clicked:', index);
             this.selectedIndex = index;
+        },
+        selectContactFromFiltered(filteredIndex) {
+            // Ottieni il contatto corrispondente nella lista completa basandoti sulla lista filtrata
+            const selectedContact = this.filteredContacts[filteredIndex];
+            // Trova l'indice del contatto selezionato nella lista completa
+            const originalIndex = this.contacts.findIndex(contact => contact.name === selectedContact.name);
+            // Usa l'indice originale per selezionare il contatto dalla lista completa
+            this.selectContact(originalIndex);
         },
         sendMessage() {
             if (this.newMessage.trim() !== '' && this.selectedContact) {
@@ -196,10 +211,8 @@ createApp({
                     message: this.newMessage,
                     status: 'sent'
                 });
-
                 // Resetta il campo di input
                 this.newMessage = '';
-
                 // Risposta automatica dell'interlocutore dopo 2 secondi
                 setTimeout(() => {
                     this.selectedContact.messages.push({
@@ -209,9 +222,13 @@ createApp({
                     });
                 }, 1000);
             }
+        },
+        // Funzione per ottenere solo l'orario (HH:MM)
+        formatTime(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         }
     }
-
 }).mount("#app");
 
 

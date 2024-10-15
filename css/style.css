@@ -1,200 +1,172 @@
-* {
+:root {
+    --color-primary: rgb(0, 150, 136);
+    --color-secondary: rgb(217, 219, 212);
+    --font-family: 'Open Sans', sans-serif;
+  }
+  
+  * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-
-#app {
+  }
+  
+  body {
+    font-family: var(--font-family);
+  }
+  
+  #app {
     height: 100vh;
-}
-
-.greenBlue {
+  }
+  
+  .greenBlue {
     height: 15vh;
-    background-color: rgb(0, 150, 136);
-}
-
-.grey {
-    background-color: rgb(217, 219, 212);
+    background-color: var(--color-primary);
+  }
+  
+  .grey {
+    background-color: var(--color-secondary);
     height: 85vh;
-}
-
-.container {
+  }
+  
+  .container {
     display: flex;
     height: 95vh;
     padding-top: 5vh;
-    margin-left: 10rem;
-    margin-right: 15rem;
-}
-
-.columnLeft {
+    margin: 0 15rem;
+  }
+  
+  .column {
     display: flex;
     flex-direction: column;
+  }
+  
+  .columnLeft {
     overflow: auto;
     padding-left: 1rem;
-}
-
-.columnRight {
-    display: flex;
-    flex-direction: column;
+  }
+  
+  .columnRight {
     overflow-y: scroll;
     width: 65%;
     background-image: url(../img/mine.jpg);
-}
-
-.avatar {
+  }
+  
+  .avatar {
     width: 3rem;
     background-color: white;
     border-radius: 50%;
-}
-
-.my {
+  }
+  
+  .my {
     padding-right: 14rem;
-}
-
-.livechat {
+  }
+  
+  .livechat {
     margin-right: 40rem;
-}
-
-.firstRow {
+  }
+  
+  .row {
+    padding: 1rem;
+  }
+  
+  .firstRow {
     background-color: rgb(234, 234, 234);
-}
-
-.fa-message,
-.fa-paperclip,
-.fa-ellipsis-vertical {
-    padding-left: 1rem;
-}
-
-.firstRow {
-    padding-top: 1rem;
-}
-
-.secondRow {
+  }
+  
+  .secondRow {
     background-color: rgb(142, 218, 252);
-}
-
-.fa-bell-slash {
+  }
+  
+  .icon {
+    padding-left: 1rem;
+  }
+  
+  .fa-bell-slash {
     padding: 10px;
     background-color: white;
     border-radius: 50%;
-}
-
-.notifiche {
+  }
+  
+  .notifiche {
     padding-left: 3rem;
     color: grey;
-}
-
-.input-group {
+  }
+  
+  .input-group {
     background-color: white;
     width: 100%;
-}
-
-.msg {
+  }
+  
+  .msg {
     color: rgb(194, 191, 191);
     padding-left: 3rem;
     font-size: 13px;
-}
-
-.time {
+  }
+  
+  .time {
     float: right;
     color: rgb(194, 191, 191);
-}
-
-.utenti {
+  }
+  
+  .utenti {
     background-color: white;
     list-style: none;
-
-}
-
-.nuova-chat {
+  }
+  
+  .nuova-chat {
     width: 100%;
-}
-
-.inviati {
+  }
+  
+  .inviati {
     float: right;
     border-radius: 10%;
     background-color: red;
     padding: 1rem;
     line-height: 3rem;
-}
-
-.ricevuti {
+  }
+  
+  .ricevuti {
     margin-left: 2rem;
-}
-
-.chat-column {
+  }
+  
+  .chat-column {
     list-style: none;
     line-height: 4rem;
-}
-
-.bg-success {
+  }
+  
+  .bg-success {
     float: right;
     margin-right: 1rem;
     font-size: 1rem;
     margin-top: 1rem;
-}
-
-.bg-light {
+  }
+  
+  .bg-light {
     margin-left: 1rem;
     font-size: 1rem;
     margin-top: 1rem;
-}
-
-.ora {
+  }
+  
+  .ora {
     font-size: 8px;
-    color:rgb(233, 229, 229);
-}
-
-.message-bar{
+    color: rgb(233, 229, 229);
+  }
+  
+  .message-bar {
     display: flex;
     flex-direction: row;
     background-color: rgb(234, 234, 234);
     position: fixed;
     bottom: 2rem;
-    padding:1rem;
-    width:54% ;
-}
-
-.nuovo-msg{
+    padding: 1rem;
+    width: 54%;
+  }
+  
+  .nuovo-msg {
     width: 90%;
     margin: auto;
-}
-
-.fa-face-smile,
-.fa-microphone{
-    margin:auto;
-}
-
-
-
-
-
-
-
-
-
-.dropdown {
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 10;
   }
   
-  .dropdown button {
-    padding: 10px;
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-  }
-  
-  .dropdown button:hover {
-    background-color: #f5f5f5;
+  .fa-face-smile, .fa-microphone {
+    margin: auto;
   }
