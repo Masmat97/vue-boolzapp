@@ -17,6 +17,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Boolzapp</title>
 </head>
+
 <body>
     <div id="app">
         <div class="greenBlue">
@@ -46,7 +47,7 @@
                         <span class="nome">{{ contact.name }}</span>
                         <span class="time">{{ lastMessage(contact) }}</span><br>
                         <span class="msg">{{ contact.messages[contact.messages.length - 1].message }}</span>
-                        
+
                     </li>
                 </div>
                 <div class="columnRight">
@@ -56,7 +57,8 @@
                         <i class="fa-solid fa-magnifying-glass" id="glass"></i>
                         <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i><br>
-                        <span class="msg">Ultimo accesso: {{ formatTime(selectedContact.messages[selectedContact.messages.length - 1].date) }}</span>
+                        <span class="msg">Ultimo accesso: {{
+                            formatTime(selectedContact.messages[selectedContact.messages.length - 1].date) }}</span>
                     </div>
                     <li class="chat-column" v-if="selectedContact">
                         <div class="messsage" v-for="(message, index) in selectedContact.messages" :key="index">
@@ -69,6 +71,7 @@
                                 <small class="ora">{{ message.date }}</small>
                             </div>
                     </li>
+
                     <div class="message-bar">
                         <i class="fa-regular fa-face-smile"></i>
                         <input type="text" class="form-control nuovo-msg" placeholder="Cerca o inizia una nuova chat"
@@ -84,4 +87,5 @@
     </div>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
